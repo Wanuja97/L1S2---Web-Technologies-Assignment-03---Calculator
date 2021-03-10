@@ -1,0 +1,94 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: Gotham Rounded, sans-serif;
+    font-weight: normal;
+  }
+  
+  body {
+    padding: 0;
+    margin: 0;
+    background: url('back.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .calculator-grid {
+    
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 90vh;
+    grid-template-columns: repeat(4, 8vw);
+    grid-template-rows: minmax(15vh, auto) repeat(5, 10vh);
+  }
+  
+  .calculator-grid > button {
+    cursor: pointer;
+    font-size: 1.7rem;
+    font-weight: bolder;
+    border: 0.5px solid white;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0.2);
+  }
+  
+  .calculator-grid > button:hover {
+    background-color: rgba(0, 0, 0, .75);
+    color: white;
+    font-size: 140%;
+    transform: scale(1.1);
+  }
+  
+  .span-two {
+    grid-column: span 2;
+  }
+  
+  .output {
+    border : 2px solid white;
+    grid-column: 1 / -1;
+    background-color: rgba(0, 0, 0, .75);
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-around;
+    flex-direction: column;
+    padding: 10px;
+    word-wrap: break-word;
+    word-break: break-all;
+  }
+  
+  .output .previous-operand {
+    color: rgba(255, 255, 255, .75);
+    font-size: 1.5rem;
+  }
+  
+  .output .current-operand {
+    color: white;
+    font-size: 2.5rem;
+  }
+  p{
+    text-align: center;
+    color: white;
+  }
+ @media (max-width:1300px){
+   .calculator-grid > button{
+     font-size:1.6rem;
+   }
+ }
+ @media (max-width:770px){
+  .calculator-grid{
+    grid-template-columns: repeat(4, 10vw);
+    grid-template-rows: minmax(18vh, auto) repeat(5, 12vh);
+  }
+ }
+ @media (max-width:633px){
+  .calculator-grid{
+    grid-template-columns: repeat(4, 13vw);
+    grid-template-rows: minmax(18vh, auto) repeat(5, 12vh);
+  }
+ }
+ @media (max-width:500px){
+  .calculator-grid{
+    grid-template-columns: repeat(4, 22vw);
+    grid-template-rows: minmax(18vh, auto) repeat(5, 12vh);
+  }
+ }
